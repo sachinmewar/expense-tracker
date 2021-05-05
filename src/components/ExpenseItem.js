@@ -1,21 +1,24 @@
 import './ExpenseItem.css'
 
-const ExpenseItem = () => {
+const ExpenseItem = (props) => {
+   const expenseDate = props.date;
+   const title = props.title;
+   const amount = props.amount;
    return(
       <div className="expense-item"> 
          <div>
-             May 5 2021 
+             {expenseDate.toISOString()} 
          </div>
 
          <div>
-         <h2 className="expense-item__description"> 
-         Car Insurance 
+         <h2 className="expense-item__description">
+            {title} 
          </h2>
          
          </div>
 
-         <div className= "expense-item__price"> 
-         5000 
+         <div className= "expense-item__price">
+            {amount}
          </div>
       </div>
    );

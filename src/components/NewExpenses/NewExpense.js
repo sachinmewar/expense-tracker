@@ -1,7 +1,5 @@
 import React from 'react';
 import './NewExpense.css';
-import './ExpenseForm';
-
 import ExpenseForm from './ExpenseForm';
 
 const NewExpense = () => {

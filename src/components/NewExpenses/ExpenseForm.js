@@ -1,24 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ExpenseForm.css';
 
 const ExpenseForm = () => {
   // This event was automatically passed by form button.
   //Everytime we click on button inside the form the page reloads. Removing this defaut feature.
-  const clickButtonHandler = (event) => {
-    event.preventDefault();
-  };
+  const [enteredTitle, setEnteredTitleHandler] = useState('');
+  const [enteredAmount, setEnteredAmountHandler] = useState('');
+  const [enteredDate, setEnteredDateHandler] = useState('');
 
   const titleHandler = (event) => {
-    console.log(event.target.value);
-  }
-
+    setEnteredTitleHandler(event.target.value);
+  };
   const amountHandler = (event) => {
-    console.log(event.target.value);
+    setEnteredAmountHandler(event.target.value);
+  };
+  const dateHandler = (event) => {
+    setEnteredDateHandler(event.target.value);
+  };
+
+  const clickButtonHandler = (event) => {
+    event.preventDefault();
+
+    const expenseDate = {
+      title: enteredTitle,
+      amount: enteredAmount,
+      date: enteredDate
+    };
+
+    console.log(expenseDate);
   }
 
-  const dateHandler = (event) => {
-    console.log(event.target.value);
-  }
 
   return (
     <form>

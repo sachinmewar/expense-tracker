@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ExpenseForm.css';
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   // This event was automatically passed by form button.
   //Everytime we click on button inside the form the page reloads. Removing this defaut feature.
   const [enteredTitle, setEnteredTitleHandler] = useState('');
@@ -29,6 +29,7 @@ const ExpenseForm = () => {
 
     console.log(expenseDate);
 
+    props.onSaveExpenseData(expenseDate);
     setEnteredTitleHandler('');
     setEnteredDateHandler('');
     setEnteredAmountHandler('');

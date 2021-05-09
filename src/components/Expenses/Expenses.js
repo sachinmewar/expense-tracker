@@ -15,9 +15,12 @@ const Expenses = (props) => {
       <div className="expenses">
          <ExpenseFilter value={filteredYear} getExpenseFilterValue={getExpenseFilterValueHandler} />
          {
+            // Added key so that the react can distinguish between different div tags and will not update 
+            // all items and the whole array
             expenses.map((item) => {
                return (
                   <ExpenseItem
+                     key={item.id}
                      title={item.title}
                      date={item.date}
                      amount={item.amount}

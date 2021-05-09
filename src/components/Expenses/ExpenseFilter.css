@@ -1,0 +1,27 @@
+.expense-filter-container {
+  color: white;
+  padding: 0rem 1rem;
+}
+
+.expense-filter {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.expense-filter label {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.expense-filter select {
+  font: inherit;
+  padding: 0.5rem 3rem;
+  font-weight: bold;
+  border-radius: 8px;
+  background-color: violet;
+  cursor: pointer;
+}

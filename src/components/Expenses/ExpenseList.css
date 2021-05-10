@@ -1,0 +1,9 @@
+expense-list {
+  list-style: none;
+  padding: 0;
+}
+
+.expenses-list__heading {
+  color: white;
+  text-align: center;
+}

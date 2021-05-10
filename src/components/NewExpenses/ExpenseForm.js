@@ -35,6 +35,9 @@ const ExpenseForm = (props) => {
     setEnteredAmountHandler('');
   }
 
+  const resetButtonHandler = () => {
+    props.hideButton();
+  };
 
   return (
     <form>
@@ -56,6 +59,7 @@ const ExpenseForm = (props) => {
       </div>
 
       <div className='new-expense__actions'>
+        <button type='reset' onClick={resetButtonHandler}> Reset </button>
         <button type='submit' onClick={clickButtonHandler}>Add Expense</button>
       </div>
     </form>

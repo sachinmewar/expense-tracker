@@ -11,13 +11,17 @@ const Expenses = (props) => {
       setfilteredYear(expenseFilterValue);
    }
 
+   const filteredExpenses = expenses.filter((item) => {
+      return item.date.getFullYear().toString() === filteredYear;
+   });
+
    return (
       <div className="expenses">
          <ExpenseFilter value={filteredYear} getExpenseFilterValue={getExpenseFilterValueHandler} />
          {
             // Added key so that the react can distinguish between different div tags and will not update 
             // all items and the whole array
-            expenses.map((item) => {
+            filteredExpenses.map((item) => {
                return (
                   <ExpenseItem
                      key={item.id}

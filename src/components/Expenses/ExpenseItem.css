@@ -7,6 +7,8 @@
   margin: 1rem 0;
   border-radius: 12px;
   background-color: #4b4b4b;
+  width: auto;
+  height: auto;
 }
 
 .expense-item__description {

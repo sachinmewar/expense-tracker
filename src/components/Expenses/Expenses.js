@@ -6,20 +6,38 @@ import ExpenseList from './ExpenseList'
 const Expenses = (props) => {
    const expenses = props.expense;
 
-   let currentYear = new Date().getFullYear().toString();
+   const [filteredExpenses, setFilteredExpenses] = useState(expenses);
 
-   const [filteredYear, setfilteredYear] = useState(currentYear);
+
+
    const getExpenseFilterValueHandler = (expenseFilterValue) => {
-      setfilteredYear(expenseFilterValue);
-   }
 
-   const filteredExpenses = expenses.filter((item) => {
-      return item.date.getFullYear().toString() === filteredYear;
-   });
+      let toggleValue = expenseFilterValue[1];
+      let filteredValue = expenseFilterValue[0]
+      let filteredItems = []
+
+      if (toggleValue === 'date') {
+
+         filteredItems = expenses.filter((item) => {
+            return item.date.getFullYear().toString() === filteredValue.toString();
+         })
+         setFilteredExpenses(filteredItems)
+
+         console.log(filteredExpenses);
+      }
+      else {
+
+         let obj = JSON.parse(filteredValue)
+         filteredItems = expenses.filter((item) => {
+            return item.amount >= obj.minVal && item.amount <= obj.maxVal;
+         })
+         setFilteredExpenses(filteredItems);
+      }
+   }
 
    return (
       <div className="expenses">
-         <ExpenseFilter value={filteredYear} getExpenseFilterValue={getExpenseFilterValueHandler} />
+         <ExpenseFilter getExpenseFilterValue={getExpenseFilterValueHandler} />
          <ExpenseList item={filteredExpenses} />
       </div>
    );

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpenses/NewExpense';
+import SwitchTheme from './components/Theme/SwitchTheme';
 
 const dummy_expenses = [
   { id: '1', title: 'laptop', amount: 44000, date: new Date() },
@@ -26,8 +27,14 @@ const App = () => {
 
   return (
     <div>
-      <NewExpense addNewExpense={addNewExpenseHandler} />
-      <Expenses expense={newExpense} />
+      <span>
+        <SwitchTheme />
+      </span>
+      <div>
+        <NewExpense addNewExpense={addNewExpenseHandler} />
+        <Expenses expense={newExpense} />
+      </div>
+
     </div>
   );
 }

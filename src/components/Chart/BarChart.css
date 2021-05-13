@@ -1,11 +1,11 @@
-chart-bar {
+bar-chart {
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.chart-bar__inner {
+.bar-chart__inner {
   height: 100%;
   width: 100%;
   border: 1px solid #313131;
@@ -17,13 +17,13 @@ chart-bar {
   justify-content: flex-end;
 }
 
-.chart-bar__fill {
+.bar-chart__fill {
   background-color: #4826b9;
   width: 100%;
   transition: all 0.5s ease-out;
 }
 
-.chart-bar__label {
+.bar-chart__label {
   font-weight: bold;
   font-size: 0.5rem;
   text-align: center;

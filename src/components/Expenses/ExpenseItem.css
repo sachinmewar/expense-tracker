@@ -1,8 +1,3 @@
-:root {
-  --textAlt: #fff;
-  --background: #fff;
-}
-
 .expense-item {
   display: flex;
   justify-content: space-between;
@@ -11,7 +6,7 @@
   padding: 0.5rem;
   margin: 1rem 0;
   border-radius: 12px;
-  background-color: #4b4b4b;
+  background-color: rgba(128, 128, 128, 0.2);
   width: auto;
   height: auto;
   margin-left: 0;

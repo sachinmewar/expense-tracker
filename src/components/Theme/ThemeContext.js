@@ -14,22 +14,26 @@ const lightTheme = [
    '--border: rgba(0,0,0,.2)',
    '--shadow: #000',
    '--heading: rgba(255,100,0,1)',
-   '--main: #1d8f13',
+   '--main: #af02db',
    '--text: #000',
    '--textAlt: #fff',
    '--inactive: rgba(0,0,0,.3)',
    '--background: white',
+   '--container: rgba(128, 128, 128, 1)',
+   '--filter-by-container: #595757'
 ];
 
 const darkTheme = [
    '--border: rgba(255,255,255,.1)',
    '--shadow: #000',
    '--heading: rgba(255,255,5,.9)',
-   '--main: #79248f',
+   '--main: #330140',
    '--text: rgb(255, 255, 255)',
    '--textAlt: #fff',
    '--inactive: rgba(255,255,255,.3)',
    '--background: #2D2D2D',
+   '--container: black',
+   '--filter-by-container: #242323'
 ];
 
 

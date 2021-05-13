@@ -6,7 +6,7 @@
 .expense-filter-toggle {
   display: flex;
   border-radius: 14px;
-  background-color: #4b4b4b;
+  background-color: var(--filter-by-container);
   width: 35%;
   align-items: center;
   margin-left: 15rem;

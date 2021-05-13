@@ -19,7 +19,7 @@ const lightTheme = [
    '--textAlt: #fff',
    '--inactive: rgba(0,0,0,.3)',
    '--background: white',
-   '--container: rgba(128, 128, 128, 1)',
+   '--container: #4f4e4e',
    '--filter-by-container: #595757'
 ];
 

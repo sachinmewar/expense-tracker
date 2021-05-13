@@ -4,13 +4,17 @@ import NewExpense from './components/NewExpenses/NewExpense';
 import SwitchTheme from './components/Theme/SwitchTheme';
 
 const dummy_expenses = [
-  { id: '1', title: 'laptop', amount: 44000, date: new Date() },
+  { id: '1', title: 'laptop', amount: 42000, date: new Date(2021, 8, 8) },
 
-  { id: '2', title: 'mouse', amount: 800, date: new Date() },
+  { id: '2', title: 'mouse', amount: 1800, date: new Date(2021, 5, 9) },
 
-  { id: '3', title: 'keyboard', amount: 1400, date: new Date() },
+  { id: '3', title: 'keyboard', amount: 2400, date: new Date(2021, 11, 28) },
 
-  { id: '4', title: 'printer', amount: 6500, date: new Date() }
+  { id: '4', title: 'printer', amount: 12500, date: new Date(2020, 9, 12) },
+
+  { id: '5', title: 'Book 1', amount: 400, date: new Date(2020, 1, 18) },
+
+  { id: '6', title: 'Mouse Pad', amount: 1250, date: new Date(2020, 3, 22) }
 ];
 
 const App = () => {

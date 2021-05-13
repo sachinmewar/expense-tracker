@@ -14,6 +14,7 @@
   background-color: #4b4b4b;
   width: auto;
   height: auto;
+  margin-left: 0;
 }
 
 .expense-item__description {

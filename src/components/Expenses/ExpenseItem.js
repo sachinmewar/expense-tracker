@@ -2,10 +2,6 @@ import './ExpenseItem.css';
 import ExpenseDate from './ExpenseDate';
 
 const ExpenseItem = (props) => {
-   // const [title, setTitle] = useState(props.title);
-   // const [date, setDate] = useState(props.date);
-   // const [amount, setAmount] = useState(props.amount);
-
 
    return (
       <div className="expense-item">

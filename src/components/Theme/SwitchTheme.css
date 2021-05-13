@@ -1,0 +1,33 @@
+.switch-button {
+  border-color: var(--border);
+}
+
+.icon {
+  color: var(--inactive);
+}
+
+.active {
+  color: var(--heading);
+}
+
+.switch-button {
+  width: 6rem;
+  height: 2rem;
+  margin: 1rem 0;
+  position: fixed;
+  border-radius: 10px;
+  border-width: 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 4px 4px 10px -3px black;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.switch-button .icon {
+  font-size: 1.3rem;
+}

@@ -1,6 +1,9 @@
 expense-list {
   list-style: none;
   padding: 0;
+  margin-left: 20px;
+  padding-left: 20px;
+  width: 100%;
 }
 
 .expenses-list__heading {

@@ -18,9 +18,9 @@ const ExpenseList = (props) => {
    }
 
    return (
-      <ul className="expense-list">
+      <div className="expense-list">
          {expenseDisplay}
-      </ul>
+      </div>
    );
 
 };

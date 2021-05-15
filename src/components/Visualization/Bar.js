@@ -71,7 +71,7 @@ class Bar extends Component {
          .attr('fill', '#000')
          .style('font-size', '20px')
          .style('text-anchor', 'middle')
-         .text('Title');
+         .text(this.props.title);
 
       chart.select('.y.axis')
          .append('text')
@@ -95,7 +95,7 @@ class Bar extends Component {
    }
 
    drawChart() {
-      const width = 800;
+      const width = this.props.chartWidth;
       const height = 450;
 
       const el = new Element('div');

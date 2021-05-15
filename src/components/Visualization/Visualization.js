@@ -1,7 +1,8 @@
 
 import Bar from './Bar';
+import data from '../../Data/Data'
 
-const Visualization = ({ data }) => {
+const Visualization = () => {
    const sorted_data = data.sort(function (a, b) {
       return (a.amount - b.amount);
    });
@@ -10,17 +11,14 @@ const Visualization = ({ data }) => {
    return (
       <div>
          <div>
-            <Bar data={sorted_data} />
-            <p> All Expenses </p>
+            <Bar data={sorted_data} chartWidth={1400} title="All Expenses" />
          </div>
          <div>
-            <Bar data={lowestValues} />
-            <p> Lowest Five Expenses </p>
+            <Bar data={lowestValues} chartWidth={1000} title="Lowest 5 Expenses" />
          </div>
 
          <div>
-            <Bar data={highestValues} />
-            <p> Top Five Expenses </p>
+            <Bar data={highestValues} chartWidth={1000} title="Highest 5 Expenses" />
          </div>
       </div>
    );

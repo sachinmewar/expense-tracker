@@ -2,8 +2,9 @@ import { useState } from 'react';
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpenses/NewExpense';
 import SwitchTheme from './components/Theme/SwitchTheme';
-//import Data from './Data/Data'
 import ShowVisualization from './components/Visualization/ShowVisualization'
+import { Route } from 'react-router-dom';
+import MainHeader from './components/Header/MainHeader'
 
 const dummy_expenses = [
   { id: '1', title: 'laptop', amount: 42000, date: new Date(2021, 8, 8) },
@@ -45,14 +46,21 @@ const App = () => {
 
   return (
     <div>
+      <div>
+        <MainHeader />
+      </div>
       <span>
         <SwitchTheme />
       </span>
       <div>
-        <NewExpense addNewExpense={addNewExpenseHandler} />
-        <Expenses expense={newExpense} />
+        <Route path="/" exact>
+          <NewExpense addNewExpense={addNewExpenseHandler} />
+          <Expenses expense={newExpense} />
+        </Route>
       </div>
-      <ShowVisualization data={dummy_expenses} />
+      <Route path="/visualization">
+        <ShowVisualization data={dummy_expenses} />
+      </Route>
     </div>
   );
 }

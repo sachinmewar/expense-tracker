@@ -2,19 +2,38 @@ import { useState } from 'react';
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpenses/NewExpense';
 import SwitchTheme from './components/Theme/SwitchTheme';
+import ShowVisualization from './components/Visualization/ShowVisualization'
+import { Route } from 'react-router-dom';
+import MainHeader from './components/Header/MainHeader'
 
 const dummy_expenses = [
-  { id: '1', title: 'laptop', amount: 44000, date: new Date() },
+  { id: '1', title: 'laptop', amount: 42000, date: new Date(2021, 8, 8) },
 
-  { id: '2', title: 'mouse', amount: 800, date: new Date() },
+  { id: '2', title: 'mouse', amount: 1800, date: new Date(2021, 5, 9) },
 
-  { id: '3', title: 'keyboard', amount: 1400, date: new Date() },
+  { id: '3', title: 'keyboard', amount: 2400, date: new Date(2021, 11, 28) },
 
-  { id: '4', title: 'printer', amount: 6500, date: new Date() }
+  { id: '4', title: 'printer', amount: 12500, date: new Date(2020, 9, 12) },
+
+  { id: '5', title: 'Book 1', amount: 400, date: new Date(2020, 1, 18) },
+
+  { id: '6', title: 'Mouse Pad', amount: 1250, date: new Date(2020, 3, 22) },
+
+  { id: '7', title: 'Earphones', amount: 799, date: new Date(2021, 8, 8) },
+
+  { id: '8', title: 'Study Table(Wooden)', amount: 15800, date: new Date(2021, 5, 9) },
+
+  { id: '9', title: 'Chair', amount: 8700, date: new Date(2020, 11, 28) },
+
+  { id: '10', title: 'Mobile', amount: 28500, date: new Date(2020, 12, 12) },
+
+  { id: '11', title: 'React Book', amount: 1290, date: new Date(2021, 5, 11) },
+
+  { id: '12', title: 'Computer Networking Book', amount: 850, date: new Date(2020, 1, 12) }
 ];
 
-const App = () => {
 
+const App = () => {
   const [newExpense, newExpenseHandler] = useState(dummy_expenses);
   const addNewExpenseHandler = addExpense => {
     // Here prevExpense is a default parameter in which prevState is returned
@@ -27,14 +46,21 @@ const App = () => {
 
   return (
     <div>
+      <div>
+        <MainHeader />
+      </div>
       <span>
         <SwitchTheme />
       </span>
       <div>
-        <NewExpense addNewExpense={addNewExpenseHandler} />
-        <Expenses expense={newExpense} />
+        <Route path="/" exact>
+          <NewExpense addNewExpense={addNewExpenseHandler} />
+          <Expenses expense={newExpense} />
+        </Route>
       </div>
-
+      <Route path="/visualization">
+        <ShowVisualization data={dummy_expenses} />
+      </Route>
     </div>
   );
 }

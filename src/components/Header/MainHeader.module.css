@@ -36,3 +36,18 @@
   padding-bottom: 0.25rem;
   border-bottom: 4px solid #95bcf0;
 }
+
+.header button {
+  margin-left: 30rem;
+  display: inline;
+  font-size: 16px;
+  color: white;
+  background-color: #00004d;
+  border-radius: 0.75rem;
+  border-width: 0.1rem;
+  padding: 0.5rem;
+  width: 7rem;
+  height: 3rem;
+  border-color: black;
+  cursor: pointer;
+}

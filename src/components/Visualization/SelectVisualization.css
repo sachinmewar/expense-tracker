@@ -1,0 +1,17 @@
+.expenses-chart__container {
+}
+
+.expenses-chart__container p {
+  margin-left: 30rem;
+  display: inline-block;
+  font-size: 1.25rem;
+}
+
+.expenses-chart__container select {
+  width: 10rem;
+  height: 2.25rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 700;
+}

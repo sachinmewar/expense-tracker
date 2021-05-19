@@ -13,7 +13,7 @@
 .switch-button {
   width: 6rem;
   height: 2rem;
-  margin: 1rem 0;
+  margin: 2rem 0;
   position: fixed;
   border-radius: 10px;
   border-width: 1px;
@@ -26,6 +26,7 @@
   background: none;
   padding: 0;
   cursor: pointer;
+  margin-left: 3rem;
 }
 
 .switch-button .icon {

@@ -1,10 +1,15 @@
-import { useState } from 'react';
+
+import { useState, useContext } from 'react';
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpenses/NewExpense';
 import SwitchTheme from './components/Theme/SwitchTheme';
 import ShowVisualization from './components/Visualization/ShowVisualization'
-import { Route } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import MainHeader from './components/Header/MainHeader'
+import AuthContext from './components/store/auth-context';
+import AuthPage from './components/Auth/AuthPage'
+import Welcome from './pages/Welcome'
+import UserProfile from './components/Profile/UserProfile'
 
 const dummy_expenses = [
   { id: '1', title: 'laptop', amount: 42000, date: new Date(2021, 8, 8) },
@@ -34,6 +39,8 @@ const dummy_expenses = [
 
 
 const App = () => {
+  const authContext = useContext(AuthContext);
+
   const [newExpense, newExpenseHandler] = useState(dummy_expenses);
   const addNewExpenseHandler = addExpense => {
     // Here prevExpense is a default parameter in which prevState is returned
@@ -49,18 +56,52 @@ const App = () => {
       <div>
         <MainHeader />
       </div>
-      <span>
-        <SwitchTheme />
-      </span>
-      <div>
-        <Route path="/" exact>
-          <NewExpense addNewExpense={addNewExpenseHandler} />
-          <Expenses expense={newExpense} />
+      { authContext.isLoggedIn &&
+        <span>
+          <SwitchTheme />
+        </span>
+      }
+      <Switch>
+        {!authContext.isLoggedIn &&
+          <Route path="/" exact>
+            <Welcome />
+          </Route>
+        }
+        {authContext.isLoggedIn &&
+          <Route path="/expenses">
+            <NewExpense addNewExpense={addNewExpenseHandler} />
+            <Expenses expense={newExpense} />
+          </Route>
+        }
+        {
+          !authContext.isLoggedIn &&
+          <Route path='/auth'>
+            <AuthPage />
+          </Route>
+        }
+        {
+          authContext.isLoggedIn &&
+          <Route path="/visualization">
+            <ShowVisualization data={dummy_expenses} />
+          </Route>
+        }
+
+        {
+          authContext.isLoggedIn &&
+          <Route path="/profile">
+            <UserProfile />
+          </Route>
+        }
+
+        {
+          // If user enter invalid path or if user try to access page
+          // without Authentication
+        }
+
+        <Route path='*'>
+          <Redirect to='/' />
         </Route>
-      </div>
-      <Route path="/visualization">
-        <ShowVisualization data={dummy_expenses} />
-      </Route>
+      </Switch>
     </div>
   );
 }

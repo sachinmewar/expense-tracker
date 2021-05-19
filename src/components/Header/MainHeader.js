@@ -16,9 +16,11 @@ const MainHeader = () => {
 
                {
                   !authContext.isLoggedIn &&
-                  < li >
-                     <NavLink to='/auth'> Login </NavLink>
-                  </li>
+                  <span>
+                     < li >
+                        <NavLink to='/auth' activeClassName='classes.active'> Login </NavLink>
+                     </li>
+                  </span>
                }
 
                {
@@ -39,13 +41,6 @@ const MainHeader = () => {
                   authContext.isLoggedIn &&
                   <li>
                      <NavLink to="/visualization" activeClassName={classes.active}> Visualization </NavLink>
-                  </li>
-               }
-
-               {
-                  !authContext.isLoggedIn &&
-                  < li >
-                     <NavLink to="/auth" activeClassName={classes.active}> </NavLink>"
                   </li>
                }
 

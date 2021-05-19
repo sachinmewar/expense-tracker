@@ -51,3 +51,8 @@
   border-color: black;
   cursor: pointer;
 }
+
+.header span {
+  margin-left: 75rem;
+  font-size: 1.25rem;
+}

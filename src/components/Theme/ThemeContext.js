@@ -59,7 +59,7 @@ export function ThemeProvider(props) {
       // if state changes, repaints the app
    }, [dark]);
 
-   // rewrites set of css variablels/colors
+   // rewrites set of css variables/colors
    const applyTheme = theme => {
       const root = document.getElementsByTagName('html')[0];
       root.style.cssText = theme.join(';');
@@ -79,7 +79,23 @@ export function ThemeProvider(props) {
          dark,
          toggle,
       }}>
-         {props.children}
+
+         {
+            // props.children contains whatever is wrapped inside ThemeProvider.
+         }
+
+         { props.children}
       </ThemeContext.Provider>
    )
 }
+
+//                                     Context.Provider
+// Every Context object comes with a Provider React component which allows the consumption of 
+// components to subscribe to context changes. In other words, we need to put all the global data 
+// and functionality in the Provider to be able 
+// to access it later from any component(consumer) in the tree.
+
+
+// ThemeProvider will return ThemeContext.Provider with the value property which will have the 
+// current UI theme state and a function to toggle it.
+// Because ThemeProvider wraps around our app, we need to pass children components inside.
